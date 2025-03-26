@@ -108,7 +108,7 @@ Page({
   },
   goadmin() {
     wx.navigateToMiniProgram({
-      appId: 'wx5e5b0066c8d3f33d',
+      appId: 'wxe6ae5c29600cdc56',
       path: 'pages/autoLogin?token=' + wx.getStorageSync('token'),
     })
   },

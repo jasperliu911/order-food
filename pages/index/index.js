@@ -9,7 +9,7 @@ Page({
     showGoodsDetailPOP: false, // 是否显示商品详情
     showCouponPop: false, // 是否弹出优惠券领取提示
     shopIsOpened: false, // 是否营业
-
+    isShowShop: false, // 是否展示商家信息 
     showPingtuanPop: false,
     share_goods_id: undefined,
     share_pingtuan_open_id: undefined,
@@ -18,8 +18,10 @@ Page({
     menuButtonBoundingClientRect: wx.getMenuButtonBoundingClientRect(),
   },  
   onLoad: function (e) {
-    getApp().initLanguage(this)
     const _data = {}
+    setTimeout(()=>{
+      getApp().initLanguage(this)
+    })
     // 测试拼团入口
     // e = {
     //   share_goods_id: 521055,
@@ -139,10 +141,15 @@ Page({
   },
   async getshopInfo(){
     let shopInfo = wx.getStorageSync('shopInfo')
+    let isShowShop = wx.getStorageSync('isShowShop') 
+    if (isShowShop) {
+      isShowShop = parseInt(isShowShop) ? true : false
+    }
     if (shopInfo) {
       this.setData({
         shopInfo: shopInfo,
-        shopIsOpened: this.checkIsOpened(shopInfo.openingHours)
+        shopIsOpened: this.checkIsOpened(shopInfo.openingHours),
+        isShowShop: isShowShop
       })
       this.categories()
       return

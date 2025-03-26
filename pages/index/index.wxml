@@ -13,7 +13,7 @@
     data-id="{{noticeLastOne.id}}"
   />
 </view>
-<view wx:if="{{ !scanDining }}" class="box">
+<view wx:if="{{ !scanDining && isShowShop }}" class="box">
   <view class="shop-name">
     <view class="name" bindtap="selectshop">{{shopInfo.name}}</view>
     <view wx:if="{{ shopInfo.openWaimai && shopInfo.openZiqu }}" class="select">
