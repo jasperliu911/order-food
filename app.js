@@ -2,7 +2,9 @@ const WXAPI = require('apifm-wxapi')
 const CONFIG = require('config.js')
 const AUTH = require('utils/auth')
 const i18n = require("i18n/index")
+
 App({
+	towxml:require('/miniprogram_npm/towxml/index'),
   onLaunch: function() {
     i18n.getLanguage()
     this.setTabBarLanguage()

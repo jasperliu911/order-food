@@ -1,0 +1,57 @@
+<!-- pages/ai-chef/ai-chef.wxml -->
+<view class="container">
+  <!-- AI厨师头像 -->
+  <image class="chef-avatar" src="../../images/chef.png"></image>
+  <text class="chef-title">AI大厨小饿</text>
+
+  <!-- 对话区域 -->
+  <scroll-view class="dialog-box" scroll-y scroll-top="{{scrollTop}}">
+    <block wx:for="{{messages}}" wx:key="index">
+      <!-- 新增消息时间 -->
+      <text wx:if="{{item.time}}" class="msg-time">{{item.time}}</text>
+      <!-- 用户消息 -->
+      <view wx:if="{{item.role === 'user'}}" class="user-message">
+        <text>{{item.content}}</text>
+        <image class="avatar" src="../../images/default.png"></image>
+      </view>
+      
+      <!-- AI消息 -->
+      <view wx:if="{{item.role === 'assistant'}}" class="ai-message">
+        <towxml nodes="{{item.content}}"/>
+      </view>
+    </block>
+    
+    <!-- 添加加载状态 -->
+    <view wx:if="{{isLoading}}" class="loading-wrapper">
+      <image class="loading-icon" src="/images/loading.png"></image>
+      <text>小饿正在思考中...</text>
+    </view>
+  </scroll-view>
+
+  <!-- 输入区域调整为禁用状态 -->
+  <view class="input-area">
+    <!-- 备选列表 -->
+    <view class="suggestion-list" wx:if="{{showQuickQuestions && quickQuestions.length}}">
+      <block wx:for="{{quickQuestions}}" wx:key="index">
+        <view 
+          class="suggestion-item" 
+          bindtap="selectSuggestion" 
+          data-value="{{item}}"
+        >
+          {{item}}
+        </view>
+      </block>
+    </view>
+    <input 
+      value="{{inputText}}" 
+      bindinput="onInput" 
+      placeholder="问小饿任何菜谱问题…" 
+      bindconfirm="sendMessage"
+      disabled="{{isLoading}}"
+      focus="{{showQuickQuestions}}"
+    />
+    <button class="send-btn" bindtap="sendMessage" disabled="{{!inputText || isLoading}}">
+      {{isLoading ? '思考中...' : '发送'}}
+    </button>
+  </view>
+</view>

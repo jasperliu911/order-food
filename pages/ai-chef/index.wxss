@@ -1,0 +1,251 @@
+/* 容器样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f9f9f9;
+  padding: 20rpx;
+}
+
+/* AI厨师头像样式 */
+.chef-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+}
+
+/* AI厨师标题样式 */
+.chef-title {
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin: 20rpx 0;
+}
+
+/* 对话区域样式 */
+.dialog-box {
+  flex: 1;
+  border: 1rpx solid #eee;
+  border-radius: 10rpx;
+  background-color: #fff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  overflow-y: auto;
+}
+
+/* 消息时间样式 */
+.msg-time {
+  text-align: center;
+  color: #999;
+  font-size: 24rpx;
+  margin: 10rpx 0;
+}
+
+/* 用户消息样式 */
+.user-message {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.user-message text {
+  background-color: #e6f7ff;
+  padding: 15rpx;
+  border-radius: 10rpx;
+  margin-right: 15rpx;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.user-message .avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+/* AI消息样式 */
+.ai-message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.ai-message .avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 15rpx;
+}
+
+.ai-message text {
+  background-color: #f0f0f0;
+  padding: 15rpx;
+  border-radius: 10rpx;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+/* 加载状态样式 */
+.loading-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.loading-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 输入区域样式 */
+.input-area {
+  display: flex;
+  align-items: center;
+}
+
+.input-area input {
+  flex: 1;
+  border: 1rpx solid #ccc;
+  border-radius: 10rpx;
+  padding: 0 25rpx;
+  margin-right: 20rpx;
+  font-size: 32rpx;
+  min-height: 36px;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.input-area .send-btn {
+  background-color: #1890ff;
+  color: #fff;
+  border: none;
+  border-radius: 10rpx;
+  padding: 15rpx 30rpx;
+  font-size: 28rpx;
+}
+
+.input-area .send-btn[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* 用户消息样式 */
+.user-message {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20rpx;
+  /* 添加淡入动画 */
+  animation: fadeIn 0.3s ease; 
+}
+
+.user-message text {
+  /* 添加渐变背景 */
+  background: linear-gradient(to bottom, #e6f7ff, #d6eaff); 
+  padding: 15rpx;
+  border-radius: 10rpx;
+  margin-right: 15rpx;
+  max-width: 70%;
+  word-wrap: break-word;
+  /* 添加过渡效果 */
+  transition: all 0.3s ease; 
+}
+
+.user-message text:hover {
+  /* 鼠标悬停时稍微放大 */
+  transform: scale(1.02); 
+}
+
+.user-message .avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+/* AI消息样式 */
+.ai-message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+  /* 添加淡入动画 */
+  animation: fadeIn 0.3s ease; 
+}
+
+.ai-message .avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 15rpx;
+}
+
+.ai-message text {
+  /* 添加渐变背景 */
+  background: linear-gradient(to bottom, #f0f0f0, #e0e0e0); 
+  padding: 15rpx;
+  border-radius: 10rpx;
+  max-width: 70%;
+  word-wrap: break-word;
+  /* 添加过渡效果 */
+  transition: all 0.3s ease; 
+}
+
+.ai-message text:hover {
+  /* 鼠标悬停时稍微放大 */
+  transform: scale(1.02); 
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 快捷提问区域样式 */
+.quick-questions {
+  margin-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.quick-question-title {
+  font-size: 28rpx;
+  color: #333;
+  margin-right: 15rpx;
+}
+
+.quick-question-btn {
+  background-color: #e6f7ff;
+  border: none;
+  border-radius: 10rpx;
+  padding: 10rpx 20rpx;
+  margin: 5rpx;
+  font-size: 26rpx;
+  color: #1890ff;
+}
+
+.quick-question-btn:hover {
+  background-color: #d6eaff;
+}

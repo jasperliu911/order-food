@@ -213,6 +213,7 @@ module.exports = {
     order: 'Ordering',
     PickingUp: 'Picking Up',
     ordered: 'Ordered',
+    AiChef: 'AI Chef',
   },
   queue: {
     t: 'Queue',

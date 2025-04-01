@@ -213,6 +213,7 @@ module.exports = {
     order: '点餐',
     PickingUp: '取餐',
     ordered: '已点',
+    AiChef: 'AI厨师',
   },
   queue: {
     t: '取号',

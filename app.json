@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/all-orders/index",
+    "pages/ai-chef/index",
     "pages/my/index",
     "pages/my/feedback",
     "pages/my/user-code",
@@ -57,6 +58,12 @@
         "iconPath": "images/nav/qc-off.png",
         "selectedIconPath": "images/nav/qc-on.png",
         "text": "取餐"
+      },
+      {
+        "pagePath": "pages/ai-chef/index",
+        "iconPath": "images/nav/aichef-off.png",
+        "selectedIconPath": "images/nav/aichef-on.png",
+        "text": "AI厨师"
       },
       {
         "pagePath": "pages/my/index",
